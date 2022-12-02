@@ -32,3 +32,16 @@ def test_url_no_auth():
 def test_url_with_auth():
     url = UrlWithAuth(url="http://example.com/index.html", userpass="user:passwd")
     assert url.request.headers.get('Authorization') == "Basic dXNlcjpwYXNzd2Q="
+
+def test_filename_no_params():
+    url = UrlWithAuth(url="http://example.com/a/b/c.jpg")
+    assert url.filename.endswith('.jpg')
+
+def test_filename_with_params():
+    url = UrlWithAuth(url="http://example.com/a/b/c.jpg?size=640x480")
+    assert url.filename.endswith('.jpg')
+
+def test_filename_clash():
+    url1 = UrlWithAuth(url="http://example.com/a/b/c.jpg?size=800x600")
+    url2 = UrlWithAuth(url="http://example.com/a/b/c.jpg?size=640x480")
+    assert url1.filename != url2.filename
