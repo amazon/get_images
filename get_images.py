@@ -168,7 +168,7 @@ def parse_args():
     """parse command line arguments"""
     ap = argparse.ArgumentParser()
     ap.add_argument('url', metavar="URL", help='url to retrieve')
-    ap.add_argument('dest', metavar="DEST", help='destination folder', type=pathlib.Path)
+    ap.add_argument('dest', metavar="DEST", help='destination folder (output directory)', type=pathlib.Path)
     # The script should use Basic Auth when optional username AND password specified (sic!),
     # but RFC7617 does not prohibit empty usernames or passwords so we leave it up to the user, just like `curl --user` does
     ap.add_argument('--userpass', metavar="USER:PASSWORD", help='username and password, colon-separated', required=False, default='')
