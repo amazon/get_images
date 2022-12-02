@@ -1,7 +1,7 @@
 """
 Author: Sergey Tuchkin, 2022
 
-Test exersise for the interview.
+Test exercise for the interview.
 
 Please write a Python script/application. The script's requirements:
 
@@ -42,7 +42,7 @@ import shutil
 import re
 
 IMAGE_EXTENSION_LOWERCASE = '.png' # from the description at the top of this script
-SOCKET_TIMEOUT_SECONDS = 30 # set socket timeout explicitly, because Python socket library defauts to None
+SOCKET_TIMEOUT_SECONDS = 30 # set socket timeout explicitly, because Python socket library defaults to None
 USER_AGENT = "curl/7.68.0" # default useragent of urllib is blacklisted on some sites (e.g. Cloudflare)
 MAX_CONCURRENCY = 100 # default limit of 100 simultaneous download requests is same as of aiohttp
 
