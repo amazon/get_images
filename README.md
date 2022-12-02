@@ -1,3 +1,5 @@
+![unit tests](https://github.com/amazon/get_images/actions/workflows/unittest.yml/badge.svg)
+
 # Test exersise for the interview.
 
 Please write a Python script/application. The script's requirements:
