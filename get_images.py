@@ -101,7 +101,7 @@ class UrlWithAuth:
         """returns name of the downloaded file"""
         # set filename to a sha256 digest of the source url to avoid race conditions while
         # saving files with same filename, e.g. /logo.png, but from different sites
-        _, extention = os.path.splitext(self.url)
+        _, extention = os.path.splitext(parse.urlparse(self.url).path)
         m = hashlib.sha256()
         m.update(self.url.encode("ascii"))
         return f"{m.hexdigest()}{extention}"
